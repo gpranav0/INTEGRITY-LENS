@@ -1,0 +1,12 @@
+project_id = "integritylens"
+
+[functions.integrity-api]
+verify_jwt = true
+
+[functions.integrity-worker]
+# The worker authenticates the `apikey` header against the injected service key.
+# It is never called by a browser and accepts POST only.
+verify_jwt = false
+
+[edge_runtime]
+policy = "per_worker"

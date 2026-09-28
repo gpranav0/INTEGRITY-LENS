@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "supabase": "npm:@supabase/supabase-js@2.116.0",
+    "supabase/cors": "npm:@supabase/supabase-js@2.116.0/cors",
+    "@integrity/engine": "../_shared/workspace/engine/index.ts",
+    "@integrity/shared": "../_shared/workspace/shared/index.ts"
+  }
+}

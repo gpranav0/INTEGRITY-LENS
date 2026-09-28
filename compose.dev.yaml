@@ -1,0 +1,14 @@
+services:
+  web:
+    image: integritylens-web-dev:local
+    build:
+      target: development
+    ports: !override
+      - "${INTEGRITYLENS_DEV_PORT:-5173}:5173"
+    volumes:
+      - .:/workspace
+      - integritylens_node_modules:/workspace/node_modules
+    restart: unless-stopped
+
+volumes:
+  integritylens_node_modules:

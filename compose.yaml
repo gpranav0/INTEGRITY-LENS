@@ -1,0 +1,16 @@
+name: integritylens
+
+services:
+  web:
+    image: integritylens-web:local
+    build:
+      context: .
+      target: production
+      args:
+        VITE_DATA_ADAPTER: ${VITE_DATA_ADAPTER:-demo}
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL:-}
+        VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY:-}
+        VITE_SUPABASE_ASSIGNMENT_ID: ${VITE_SUPABASE_ASSIGNMENT_ID:-}
+    ports:
+      - "${INTEGRITYLENS_PORT:-8080}:8080"
+    restart: unless-stopped
